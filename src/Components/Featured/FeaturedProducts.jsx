@@ -7,9 +7,32 @@ const FeaturedProducts = () => {
     const {isLoading, featuredProducts} =useProductContext();
         console.log(featuredProducts);
     
-    if (isLoading) {
-        return <div>......loading</div>
-    }
+        const dummyProduct = {
+          id: 'dummy_id',
+          product_name: 'Dummy Product',
+          price: 10.99,
+          description: 'This is a dummy product for testing purposes.',
+          // Add other properties as needed
+      };
+  
+      if (isLoading) {
+          // Display loading indicator or dummy product
+          return (
+              <Wrapper className='section'>
+                  <div className="container">
+                      <div className="intro-data">Check Now</div>
+                      <div className="common-headding">Featured Products</div>
+                      <div className="grid grid-three-column">
+                          <ProductCard key={dummyProduct.id} {...dummyProduct} />
+                          <ProductCard key={dummyProduct.id + '1'} {...dummyProduct} />
+                          <ProductCard key={dummyProduct.id + '2'} {...dummyProduct} />
+                      </div>
+                  </div>
+              </Wrapper>
+          );
+      }
+  
+    
     return (
         <>
         <Wrapper className='section'>
@@ -30,6 +53,7 @@ const FeaturedProducts = () => {
         </>
   )
 }
+
 const Wrapper = styled.section`
   padding: 9rem 0;
   background-color: ${({ theme }) => theme.colors.bg};
