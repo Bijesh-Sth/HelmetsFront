@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProductCard from '../Product_card/Productcard';
+import ProductCard from '../ProductCard/ProductCard';
 import {useProductContext} from "../../Context/ProductContext"
 const FeaturedProducts = () => {
 
