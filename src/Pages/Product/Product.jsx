@@ -1,5 +1,5 @@
 import {React, useEffect, useState} from 'react';
-import ReactMarkdown from "react-markdown";
+// import ReactMarkdown from "react-markdown";
 import image from '../../Assets/Products/agv/k6.jpg';
 import CartAmountToggle from '../../Components/cartAmount/CartAmountToggle';
 import {useParams} from 'react-router-dom';
@@ -8,7 +8,7 @@ import { useProductContext } from '../../Context/ProductContext';
 
 const Product = ({product}) => {
 
-    const {singleProduct, isSingleLoading, getSingleProduct } = useProductContext();
+    const {singleProduct, getSingleProduct } = useProductContext();
     const {id} = useParams();
     console.log(id);
     console.log(singleProduct);

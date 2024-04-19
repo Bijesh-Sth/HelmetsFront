@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Product_card from '../Product_card/Product_card';
+import ProductCard from '../Product_card/Productcard';
 import {useProductContext} from "../../Context/ProductContext"
-const Featured_Product = () => {
+const FeaturedProducts = () => {
 
     const {isLoading, featuredProducts} =useProductContext();
         console.log(featuredProducts);
@@ -19,7 +19,7 @@ const Featured_Product = () => {
                 <div className="grid grid-three-column">
                     {
                         featuredProducts.map((current)=>{
-                            return <Product_card key={current.id} {...current}/>
+                            return <ProductCard key={current.id} {...current}/>
                         })
                 
                     }
@@ -140,4 +140,4 @@ const Wrapper = styled.section`
 `;
 
 
-export default Featured_Product
+export default FeaturedProducts;
